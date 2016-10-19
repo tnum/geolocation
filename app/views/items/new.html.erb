@@ -92,13 +92,10 @@
 
       geocoder.geocode({'location': updatedLatLng}, function(results, status){
         if(status === 'OK') { 
-          // if(results[1]) {
-          //   map.setZoom(11);
-          //   var marker
-          // }
           var newAdd = results[1].formatted_address;
-          console.log(newAdd);
-          document.getElementById('pac-input').value = newAdd; 
+          infowindow.setContent(newAdd);
+          document.getElementById('pac-input').value = newAdd;
+          document.getElementById('item_address').value = newAdd; 
         }
       });
       
